@@ -27,7 +27,9 @@ Strategy
 Create a bare Git repository from a local Git repository
 --------------------------------------------------------
 
-    $ git clone --bare path/to/local-repo repo.git
+To create a bare git repository from a local one that contains only the master branch you need at least git version 1.7.10:
+
+    $ git clone -b master --single-branch --bare path/to/local-repo repo.git
 
 
 Move the Git repository to the server
@@ -57,4 +59,8 @@ And push it to the origin
     $ git push -u origin develop
 
 This tells git to push changes from your develop branch to the develop branch on the origin repository. If origin does not have a develop branch, it is created on the fly. The -u tells git that you want to be able to easily push and pull changes to that branch in the future.
+
+
+Adapt jenkins to build the *develop* branch
+-------------------------------------------
 
