@@ -4,7 +4,7 @@ How to create an rsa authentication key for authentication on a foreign server
 Create the key
 --------------
 
-$ ssh-keygen
+    $ ssh-keygen
 
 This will generate both a private and a public key. They will be stored in *~/.ssh/id_rsa* and *~/.ssh/id_rsa.pub*.
 
