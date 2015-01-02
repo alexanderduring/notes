@@ -64,3 +64,26 @@ This tells git to push changes from your develop branch to the develop branch on
 Adapt jenkins to build the *develop* branch
 -------------------------------------------
 
+Update your Jenkins installation and install the [Git Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin).
+
+Repository URL should be in the format:
+
+    git@hostname.com:repository
+
+Now you can set up the jenkins job as usual.
+
+
+Empty directories in your project
+---------------------------------
+
+Subversion allows you to have empty directories in your project, git does not. To find all empty directories in the project do a subversion export:
+
+    $ svn export <project-url>
+
+In the resulting project, look for empty directories by using:
+
+    $ find . -empty -type d
+
+Decide for each empty directory, if you want to remove it or place a .gitignore, a .gitkeep or a readme file in it.
+
+
