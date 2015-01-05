@@ -1,6 +1,6 @@
 
-Git Reference Card
-==================
+Git Branching Model Reference Card
+==================================
 
 Release branches
 ----------------
@@ -15,9 +15,21 @@ Release branches
 
 ### Finishing a release branch ###
 
+First the release branch is merged back into `master` and tagged for deployment.
+
     $ git checkout master
 
     $ git merge --no-ff release-1.2.0
 
     $ git tag -a 1.2.0
+
+Second the changes made on the release branch need to be merged back into `develop`.
+
+    $ git checkout develop
+    
+    $ git merge --no-ff release-1.2.0
+
+Now the release branch should be removed.
+
+    $ git branch -d release-1.2.0
 
