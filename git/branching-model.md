@@ -13,6 +13,12 @@ Release branches
 
     $ git checkout -b release-1.2.0 develop
 
+To set up the upstream branch use this:
+
+    $ git push -u origin release-1.2.0
+
+This creates a remote branch with the same name and connects it to your local branch for easy pushing / pulling.
+
 ### Finishing a release branch ###
 
 First the release branch is merged back into `master` and tagged for deployment.
