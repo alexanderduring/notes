@@ -21,7 +21,8 @@ First the release branch is merged back into `master` and tagged for deployment.
 
     $ git merge --no-ff release-1.2.0
 
-    $ git tag -a 1.2.0
+    $ git tag -a v1.2.0 -m "Created tag v1.2.0"
+    $ git push origin v1.2.0
 
 Second the changes made on the release branch need to be merged back into `develop`.
 
