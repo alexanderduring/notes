@@ -2,6 +2,33 @@
 Git Branching Model Reference Card
 ==================================
 
+Main branches
+-------------
+
+  - master
+  - develop
+
+We consider 
+  - origin/master to be the main branch where the source code of HEAD always reflects a production-ready state.
+  - origin/develop to be the main branch where the source code of HEAD always reflects a state with the latest delivered development changes for the next release. Some would call this the “integration branch”. This is where any automatic nightly builds are built from.
+
+
+Supporting branches
+-------------------
+
+  - Feature branches
+  - Release branches
+  - Hotfix branches
+
+
+Feature branches
+----------------
+
+  - May branch off from `develop`
+  - Must merge back into `develop`
+  - Branch naming convention: anything except `master`, `develop`, `release-*` or `hotfix-*`
+
+
 Release branches
 ----------------
 
@@ -24,9 +51,7 @@ This creates a remote branch with the same name and connects it to your local br
 First the release branch is merged back into `master` and tagged for deployment.
 
     $ git checkout master
-
     $ git merge --no-ff release-1.2.0
-
     $ git tag -a v1.2.0 -m "Created tag v1.2.0"
     $ git push origin v1.2.0
 
