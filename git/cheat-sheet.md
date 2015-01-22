@@ -6,6 +6,7 @@ Branches
 --------
 
 Show local branches:
+
     $ git branch
 
 Show remote branches:
