@@ -32,3 +32,12 @@ Update and remove all references to remote branches that do not exist anymore:
 Deleting a remote branch:
 
     $ git push origin :<remote-branch>
+
+
+Reverting Commits
+-----------------
+
+If you want to revert changes to a file in a commit that was already pushed you can checkout the old version of that file and commit it again.
+
+    $ git checkout <commit_hash> -- path/to/file.txt
+
