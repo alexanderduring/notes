@@ -2,14 +2,14 @@
 Branch name in window title in Visual Studio
 ============================================
 
-To see the branch name of the solution you have currently open in Visual Studio you need to follow this steps:
+To see the branch name of the solution you have currently open in Visual Studio you need to follow these steps:
 
 Install the Visual Studio Window Title Changer
 ----------------------------------------------
 
-  - Open "TOOLS" -> "Extensions and Updates" -> "Online"  and search for "Window Title".
-  - Install the Visual Studio Window Title Changer.
-  - Restart the IDE
+- Open "TOOLS" -> "Extensions and Updates" -> "Online"  and search for "Window Title".
+- Install the Visual Studio Window Title Changer.
+- Restart the IDE
 
 Define your window title string
 -------------------------------
