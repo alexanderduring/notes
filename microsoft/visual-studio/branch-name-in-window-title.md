@@ -17,10 +17,11 @@ Define your window title string
 Let us assume, that your repository is named "My Repository" and you have checked out a working copy in the folder "Development".
 
   - Open "TOOLS" -> "Options" -> "VS Window Tilte Changer" -> "Settings" -> "Window Title Setup" -> "..."
-  - Replace the window title expression by this and hit save:
+  - Replace the window title expression by the one shown below
+  - hit save
 
 
-    if (sln\_path=~"^.\*Development/My Repository/(?\<branch\>.\*)/(?\<solution_folder\>.\*)/(?\<solution_name\>.*)\\.sln$") {
+    if (sln_path=~"^.*Development/My Repository/(?<branch>.*)/(?<solution_folder>.*)/(?<solution_name>.*)\.sln$") {
         $solution_name + " (" + $branch + ")"
     } else {
         orig_title
