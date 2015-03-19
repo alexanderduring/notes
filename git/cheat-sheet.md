@@ -41,3 +41,21 @@ If you want to revert changes to a file in a commit that was already pushed you 
 
     $ git checkout <commit_hash> -- path/to/file.txt
 
+
+Renaming Branches
+-----------------
+
+Renaming a local branch is easy.
+
+    $ git branch -m old-local-branch new-local-branch
+
+Renaming the corresponding remote branch is possible via deleting the old remote branch and recreating a new remote branch from your local branch.
+
+
+First delete the old remote branch:
+
+    $ git push origin :old-remote-branch
+
+Now recreate the remote branch with the new name:
+
+    $ git push -u origin new-local-branch
