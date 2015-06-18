@@ -9,6 +9,10 @@ Check for missing fonts
 
 You get a list with all fonts that are used in the pdf and also information if they are embedded or not.
 
+    name                                 type              encoding         emb sub uni object ID
+    ------------------------------------ ----------------- ---------------- --- --- --- ---------
+    CGRSAU+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0
+    Helvetica                            Type 1            WinAnsi          no  no  no     141  0
 
 Repair the PDF with Ghostscript
 -------------------------------
