@@ -19,6 +19,12 @@ Repair the PDF with Ghostscript
 
     $ /usr/bin/gs -o Repaired.pdf -dPDFSETTINGS=/prepress -sDEVICE=pdfwrite Broken.pdf
 
+The -dPDFSETTINGS=/prepress parameter tells Ghostscript to embed all non-embedded fonts. After the processing, the list of fonts looks like this:
+
+    name                                 type              encoding         emb sub uni object ID
+    ------------------------------------ ----------------- ---------------- --- --- --- ---------
+    TTLCBH+ArialMT-Identity-H            CID TrueType      Identity-H       yes yes yes     11  0
+
 
 Links:
   - http://stackoverflow.com/questions/10277418/the-pdf-viewer-evince-on-linux-can-not-display-some-math-symbols-correctly
