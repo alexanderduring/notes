@@ -19,3 +19,6 @@ Repair the PDF with Ghostscript
 
     $ /usr/bin/gs -o Repaired.pdf -dPDFSETTINGS=/prepress -sDEVICE=pdfwrite Broken.pdf
 
+
+Links:
+  - http://stackoverflow.com/questions/10277418/the-pdf-viewer-evince-on-linux-can-not-display-some-math-symbols-correctly
