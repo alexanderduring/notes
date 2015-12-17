@@ -1,0 +1,46 @@
+
+Given this table Test:
+
+User_Id     Email_Id    Type
+----------- ----------- -----------
+ 1          10          1
+-1          10          2
+12          11          1
+-1          11          2
+-1          11          2
+-1          11          3
+
+The goal is to set all User_Ids that are currently -1 to the correct value which can be looked up in the corresponding row with Type = 1.
+
+The next query pairs the corresponding rows:
+
+SELECT * FROM [Test] T1
+LEFT JOIN [Test] T2 ON T2.Email_Id = T1.Email_Id
+WHERE T1.User_Id = -1 AND T2.Type = 1 
+
+User_Id     Email_Id    Type        User_Id     Email_Id    Type
+----------- ----------- ----------- ----------- ----------- -----------
+-1          10          2           1           10          1
+-1          11          2           12          11          1
+-1          11          2           12          11          1
+-1          11          3           12          11          1
+
+To update the User_Id in the first column with the value of the fourth column we can edit the query in this way:
+
+UPDATE T1
+SET T1.User_Id = T2.User_Id
+FROM [Notebook].[cdw].[Test] AS T1
+LEFT JOIN [Notebook].[cdw].[Test] T2 ON T2.Email_Id = T1.Email_Id
+WHERE T1.User_Id = -1 AND T2.Type = 1 
+
+which results in...
+
+User_Id     Email_Id    Type
+----------- ----------- -----------
+ 1          10          1
+ 1          10          2
+12          11          1
+12          11          2
+12          11          2
+12          11          3
+
