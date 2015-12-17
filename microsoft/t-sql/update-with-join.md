@@ -4,14 +4,14 @@ UPDATE with JOIN
 
 Given this table Test:
 
-  User_Id     Email_Id    Type
-  ----------- ----------- -----------
-   1          10          1
-  -1          10          2
-  12          11          1
-  -1          11          2
-  -1          11          2
-  -1          11          3
+    User_Id     Email_Id    Type
+    ----------- ----------- -----------
+     1          10          1
+    -1          10          2
+    12          11          1
+    -1          11          2
+    -1          11          2
+    -1          11          3
 
 The goal is to set all User_Ids that are currently -1 to the correct value which can be looked up
 in the corresponding row with Type = 1.
