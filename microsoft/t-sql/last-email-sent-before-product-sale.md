@@ -2,7 +2,7 @@
 Last Email Sent Before Product Sale (T-SQL)
 ===========================================
 
-Problem: Given two tables, one with product sales and the other with sent emails, you want to select for every sold product the last email, that was sent before the sale took place.
+Problem: Given two tables, one with product sales and the other one with sent emails. For every sold product We want to select the last email that was sent to the user before the sale took place.
 
 Table Sales:
 
@@ -10,7 +10,7 @@ Table Sales:
     ---- --------------------- -------
     1    2015-12-04 11:20:37   10
     2    2016-01-02 15:41:00   14
-    3    2015-01-02 08:11:01   10
+    3    2016-01-02 08:11:01   10
 
 
 Table Emails:
@@ -42,8 +42,8 @@ First we create a joined table where every sale is paired with every email that 
     1        2015-12-04 11:20:37  1         2015-12-01 12:00:00  1
     2        2016-01-02 15:41:00  4         2016-01-01 12:00:00  1
     2        2016-01-02 15:41:00  2         2015-12-01 12:00:00  2
-    3        2015-01-02 08:11:01  3         2016-01-01 12:00:00  1
-    3        2015-01-02 08:11:01  1         2015-12-01 12:00:00  2
+    3        2016-01-02 08:11:01  3         2016-01-01 12:00:00  1
+    3        2016-01-02 08:11:01  1         2015-12-01 12:00:00  2
 
 Now we already have the information we want in this result table, but there are more rows than needed. We only need the rows where Row_Number = 1. But to filter for the row number we cannot use it in the WHERE clause. Instead we do it this way:
 
@@ -72,5 +72,5 @@ Now we already have the information we want in this result table, but there are 
     -------- -------------------- --------- --------------------
     1        2015-12-04 11:20:37  1         2015-12-01 12:00:00
     2        2016-01-02 15:41:00  4         2016-01-01 12:00:00
-    3        2015-01-02 08:11:01  3         2016-01-01 12:00:00
+    3        2016-01-02 08:11:01  3         2016-01-01 12:00:00
 
