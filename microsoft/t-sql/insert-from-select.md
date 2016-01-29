@@ -4,7 +4,7 @@ INSERT from SELECT (T-SQL)
 
 Problem: Your have a table EmailEvents with rows of different types (1, 2, 3) which represent different things that can be done with an email (sending, opening and clicking on links). The problem is, that the "Opened" events are missing for several emails and you want to add these. 
 
-Given this table Test:
+Given this table EmailEvents:
 
     Date_SID    Email_SID   Type
     ----------- ----------- -----------
