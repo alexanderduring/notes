@@ -34,14 +34,14 @@ The solution is..
                 e2.[SID] AS OpenEntrySID
             FROM 
                 [EmailEvents] e1
-            left JOIN
-                [EmailEvents] e2 ON e2.Email_SID = e1.Email_SID and e2.Type = 3
+            LEFT JOIN
+                [EmailEvents] e2 ON e2.Email_SID = e1.Email_SID AND e2.Type = 3
             WHERE
                 e1.Type = 2
         ) foo
         WHERE
-            number = 1 and
-            OpenEntrySID is null
+            number = 1 AND
+            OpenEntrySID IS NULL
 
 
 which results in...
