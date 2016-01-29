@@ -6,16 +6,16 @@ Problem: Your have a table EmailEvents with rows of different types (1, 2, 3) wh
 
 Given this table EmailEvents:
 
-    Date_SID    Email_SID   Type
-    ----------- ----------- -----------
-    20160101    1           2           (Clicked)
-    20160101    2           2
-    20160102    2           2
-    20160101    1           1           (Sent)
-    20160101    2           1
-    20151201    3           1
-    20151201    3           2
-    20151201    3           3           (Opened)
+    SID   Date_SID    Email_SID   Type
+    ----- ----------- ----------- -----------
+    1     20160101    1           2           (Clicked)
+    2     20160101    2           2
+    3     20160102    2           2
+    4     20160101    1           1           (Sent)
+    5     20160101    2           1
+    6     20151201    3           1
+    7     20151201    3           2
+    8     20151201    3           3           (Opened)
 
 The rule would be: Every email that has at least one "Clicked" event should also have one "Opened" event and the date should be the same as the date of the first "Clicked" event.
 
@@ -46,16 +46,16 @@ The solution is..
 
 which results in...
 
-    Date_SID    Email_SID   Type
-    ----------- ----------- -----------
-    20160101    1           2
-    20160101    2           2
-    20160102    2           2
-    20160101    1           1
-    20160101    2           1
-    20151201    3           1
-    20151201    3           2
-    20151201    3           3
-    20160101    1           3
-    20160101    2           3
+    SID   Date_SID    Email_SID   Type
+    ----- ----------- ----------- -----------
+    1     20160101    1           2           (Clicked)
+    2     20160101    2           2
+    3     20160102    2           2
+    4     20160101    1           1           (Sent)
+    5     20160101    2           1
+    6     20151201    3           1
+    7     20151201    3           2
+    8     20151201    3           3           (Opened)
+    9     20160101    1           3
+    10    20160101    2           3
 
