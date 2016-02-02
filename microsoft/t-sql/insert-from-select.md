@@ -28,19 +28,19 @@ The solution is..
             3
         FROM (
             SELECT 
-                e1.[Date_SID],
-                e1.[Email_SID],
-                ROW_NUMBER() OVER (PARTITION BY e1.[Email_SID] ORDER BY e1.[Date_SID]) AS number,
-                e2.[SID] AS OpenEntrySID
+                Clicks.[Date_SID],
+                Clicks.[Email_SID],
+                ROW_NUMBER() OVER (PARTITION BY Clicks.[Email_SID] ORDER BY Clicks.[Date_SID]) AS Number,
+                Opens.[SID] AS OpenEntrySID
             FROM 
-                [EmailEvents] e1
+                [EmailEvents] Clicks
             LEFT JOIN
-                [EmailEvents] e2 ON e2.Email_SID = e1.Email_SID AND e2.Type = 3
+                [EmailEvents] Opens ON Opens.Email_SID = Clicks.Email_SID AND Opens.Type = 3
             WHERE
-                e1.Type = 2
+                Clicks.Type = 2
         ) foo
         WHERE
-            number = 1 AND
+            Number = 1 AND
             OpenEntrySID IS NULL
 
 
