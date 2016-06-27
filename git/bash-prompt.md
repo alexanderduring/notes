@@ -29,9 +29,9 @@ This defines a function *parse_git_branch()*, which takes a list of all git bran
 
     # git
     parse_git_status() {
-      local STATUS=`git status 2>&1`
+      local STATUS=`git status --porcelain 2>&1`
       if [[ "$STATUS" != *'Not a git repository'* ]]; then
-        if [[ "$STATUS" == *'working directory clean'* ]]; then
+        if [[ "$STATUS" == '' ]]; then
           echo -e ''
         else
           echo -e '±'
