@@ -21,3 +21,18 @@ FOR /F "tokens=6" %%F IN ('fsutil volume diskfree C: ^| find "Gesamtanzahl an fr
 
 :: ---- Write the current date and the free diskspace into the diskfree.log ----
 echo %date%%freespace% >> diskfree.log
+
+
+:: ---- Create JSON files from diskfree.log ----
+echo var dates = [ > dates.js
+echo var values = [ > values.js
+
+:: ---- Add entries to JSON files ----
+FOR /F "tokens=1-2" %%A IN (diskfree.log) DO (
+    echo "%%A", >> dates.js
+    echo %%B, >> values.js
+)
+
+:: ---- Close JSON files ----
+echo ] >> dates.js
+echo ] >> values.js
