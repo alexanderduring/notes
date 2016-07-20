@@ -36,3 +36,7 @@ FOR /F "tokens=1-2" %%A IN (diskfree.log) DO (
 :: ---- Close JSON files ----
 echo ] >> dates.js
 echo ] >> values.js
+
+:: ---- Copy JSON files to network storage ----
+copy dates.js \\<NETWORK_STORAGE>\path\to\folder
+copy values.js \\<NETWORK_STORAGE>\path\to\folder
