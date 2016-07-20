@@ -1,6 +1,6 @@
 @ECHO OFF
 ::
-:: This script is scheduled for executed once every day and saves the free hard disc space in a text file.
+:: This script is scheduled for execution once every day and adds the date and the free hard disc space to the diskfree.log.
 ::
 
 SET basedir=C:\enter\your\desired\path
