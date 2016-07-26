@@ -3,7 +3,7 @@ layout: post
 title: Git Bash Prompt
 description: "How to set up a git bash prompt that shows the branch and the current git status."
 modified: 2014-12-18
-tags: [git bash]
+tags: [git, bash]
 ---
 
 How to change the bash prompt to reflect the status of your repository
