@@ -6,9 +6,6 @@ modified: 2015-07-03
 tags: [git]
 ---
 
-Deleting Orphaned Branches
-==========================
-
 Sometimes you have a feature branch that was finished and merged into the develop branch, but was never deleted. The same could happen with a release branch that was merged into master and deployed, but is still around cluttering up the branches list. To find those branches you should first update your references and remove all references to remote branches that do not exist anymore:
 
     $ git remote update --prune origin
