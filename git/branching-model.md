@@ -61,7 +61,10 @@ Second the changes made on the release branch need to be merged back into `devel
     
     $ git merge --no-ff release-1.2.0
 
-Now the release branch should be removed.
+Now the release branch should be removed. First the local one:
 
     $ git branch -d release-1.2.0
 
+And now the remote branch:
+
+    $ git push origin :release-1.2.0
