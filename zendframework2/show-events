@@ -9,14 +9,24 @@
 # @author Alexander During
 #
 
-printf "\nEvents Overview\n===============================\n\n"
+echo -e '\n\E[37;44m Event Inspector (C) 2016 by Alexander During \E[37;40m List events in your zend framework 2 application \033[0m\n'
 
 EVENTS=`git grep ">trigger(" | sed -n 's/.*>trigger(\([^,]*\),.*/\1/p' | sort`
 
 for event in $EVENTS; do
     printf "\nEvent: $event\n\n"
-    TRIGGER_FILE=`git grep --files-with-matches --full-name ">trigger($event"`
-    printf "Triggered in:\n%s\n\n" "$TRIGGER_FILE"
+
+    TRIGGER_FILES=`git grep --files-with-matches --full-name ">trigger($event"`
+    printf "Triggered in:\n"
+    for file in $TRIGGER_FILES; do
+        printf "< %s\n" $file
+    done
+    printf "\n"
+
     LISTENER_FILES=` git grep --files-with-matches --full-name ">attach(.*$event"`
-    printf "Listened in:\n%s\n\n" "$LISTENER_FILES"
+    printf "Listened in:\n"
+    for file in $LISTENER_FILES; do
+        printf "> %s\n" $file
+    done
+    printf "\n"
 done
