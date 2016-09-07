@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# This bash script uses the git grep command to search for the triggering of events
+# and listening to events in a zend framework 2 application and creates a formatted output.
+# 
+# It works only well, if you ommit multiline calls and do not use variables or constants as
+# event name.
+#
+# @author Alexander During
+#
+
+printf "\nEvents Overview\n===============================\n\n"
+
+EVENTS=`git grep ">trigger(" | sed -n 's/.*>trigger(\([^,]*\),.*/\1/p' | sort`
+
+for event in $EVENTS; do
+    printf "\nEvent: $event\n\n"
+    TRIGGER_FILE=`git grep --files-with-matches --full-name ">trigger($event"`
+    printf "Triggered in:\n%s\n\n" "$TRIGGER_FILE"
+    LISTENER_FILES=` git grep --files-with-matches --full-name ">attach(.*$event"`
+    printf "Listened in:\n%s\n\n" "$LISTENER_FILES"
+done
