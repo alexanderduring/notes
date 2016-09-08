@@ -7,6 +7,7 @@
 # event name.
 #
 # @author Alexander During
+# @source https://github.com/alexanderduring/notes/blob/master/zendframework2/event-inspector
 #
 
 echo -e '\n\E[37;44m Event Inspector (C) 2016 by Alexander During \E[37;40m Lists events in your zend framework 2 application \033[0m\n'
