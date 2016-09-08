@@ -17,16 +17,19 @@ for event in $EVENTS; do
     printf "\nEvent: $event\n\n"
 
     TRIGGER_FILES=`git grep --files-with-matches --full-name ">trigger($event"`
-    printf "Triggered in:\n"
+    echo -e "  \e[92mTriggered in:\e[39m"
     for file in $TRIGGER_FILES; do
-        printf "< %s\n" $file
+        printf "    < %s\n" $file
     done
     printf "\n"
 
     LISTENER_FILES=` git grep --files-with-matches --full-name ">attach(.*$event"`
-    printf "Listened in:\n"
+    echo -e "  \e[93mListened in:\e[39m"
     for file in $LISTENER_FILES; do
-        printf "> %s\n" $file
+        printf "    > %s\n" $file
     done
     printf "\n"
 done
+
+echo
+
