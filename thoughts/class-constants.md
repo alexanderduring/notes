@@ -61,3 +61,5 @@ class Adapter implements AdapterInterface
 ```
 
 This way you can define and change the values that you write into your database in your own adapter. You can change them without the need to change the interface definition and you can easily see, which interface types are implemented in your adapter. The constants in your Adapter class should of course be private or at least not used outside of the class.
+
+The questions is: Where to put the interface definition? In the context of the consumer or the implementor?
