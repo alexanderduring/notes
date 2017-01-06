@@ -12,7 +12,7 @@
 
 echo -e '\n\E[37;44m Event Inspector (C) 2016 by Alexander During \E[37;40m Lists events in your zend framework 2 application \033[0m\n'
 
-EVENTS=`git grep ">trigger(" | sed -n 's/.*>trigger(\([^,]*\),.*/\1/p' | sort`
+EVENTS=`git grep ">trigger(" | sed -n 's/.*>trigger(\([^,]*\),.*/\1/p' | sort -u`
 
 for event in $EVENTS; do
     printf "\nEvent: $event\n\n"
