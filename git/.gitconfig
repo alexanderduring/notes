@@ -1,26 +1,26 @@
 [user]
-	email = your.email@somewhere.de
-	name = Your Name
+    email = your.email@somewhere.de
+    name = Your Name
 [alias]
-	st = status
-	history = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --date-order
-	find = grep -F
+    st = status
+    history = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --date-order
+    find = grep -F
 [color]
-	branch = auto
-	diff = auto
-	status = auto
+    branch = auto
+    diff = auto
+    status = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	meta = yellow
-	frag = magenta
-	old = red
-	new = green
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 [push]
-	default = simple
+    default = simple
