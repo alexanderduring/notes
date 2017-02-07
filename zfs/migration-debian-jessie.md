@@ -8,3 +8,8 @@ The following steps should be considered:
 - Install Debian Jessie
 - Install ZFS Support
 - Mount ZFS Pool
+
+
+Sources:
+- https://github.com/zfsonlinux/zfs/wiki/Debian
+- https://www.howtoforge.com/tutorial/how-to-install-and-configure-zfs-on-debian-8-jessie
