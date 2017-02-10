@@ -8,7 +8,7 @@ The following steps should be considered:
 - Exporting the ZFS Pool
 - Install Debian Jessie
 - Install ZFS Support
-- Mount ZFS Pool
+- Import and Mount ZFS Pool
 
 ## Secure a Backup of the ZFS Pool
 
