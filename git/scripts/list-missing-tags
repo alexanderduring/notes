@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# This script lists all tags that are on master but not on the current branch
+# @author Alexander During
+
+# Update local repository
+git fetch
+
+# fetch current branch name
+BRANCH_NAME=`git branch | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+
+# print message
+echo
+echo -e "Tags on \e[94mmaster\e[0m but not on \e[94m$BRANCH_NAME\e[0m:"
+
+# Lookup tags on origin/master
+TAGS_ON_MASTER=(`git log --simplify-by-decoration --decorate --pretty=oneline --author-date-order  origin/master | grep 'tag: ' | sed 's/.*tag: \(v\?[0-9]*\.[0-9]*\.[0-9]*\).*/\1/'`)
+
+# Lookup tags on branch
+TAGS_ON_HEAD=(`git log --simplify-by-decoration --decorate --pretty=oneline --author-date-order HEAD | grep 'tag: ' | sed 's/.*tag: \(v\?[0-9]*\.[0-9]*\.[0-9]*\).*/\1/'`)
+
+# Iterate over all master tags and compare them to the branch tag at the position of the pointer
+POINTER=0
+for tag in ${TAGS_ON_MASTER[@]}; do
+    if [ $tag = ${TAGS_ON_HEAD[$POINTER]} ]; then
+        # If the tag was found, move the pointer to the next position
+        POINTER=$POINTER+1
+    else
+        # If the tag was not found, print it
+        echo -e "  \e[33m$tag\e[0m"
+    fi
+done
+
+echo
