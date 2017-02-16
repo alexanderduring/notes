@@ -18,4 +18,4 @@ Tags on master but not on <your-branch-name>:
 $
 ```
 
-Tags must match the following patters: ```v?[0-9]*\.[0-9]*\.[0-9]*```
+Tags have to match the following pattern: ```v?[0-9]*\.[0-9]*\.[0-9]*```
