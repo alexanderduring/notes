@@ -17,7 +17,21 @@ See [docs.oracle.com](http://docs.oracle.com/cd/E19253-01/819-5461/gbchy/index.h
 
 ## Install Debian Jessie
 
+Download a disc image at [www.debian.org](https://www.debian.org/distrib/netinst).
+
 ## Install zfs-linux Package
+
+Add jessie-backports repository (ZFS packages are in contrib area):
+```
+$ sudo echo "deb http://ftp.debian.org/debian jessie-backports main contrib" >> /etc/apt/sources.list.d/backports.list
+$ sudo aptitude update
+```
+
+Install zfs package:
+```
+$ sudo aptitude install -t jessie-backports zfs-dkms
+```
+
 Sources:
 - https://github.com/zfsonlinux/zfs/wiki/Debian
 - https://www.howtoforge.com/tutorial/how-to-install-and-configure-zfs-on-debian-8-jessie
