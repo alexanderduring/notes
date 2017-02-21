@@ -13,7 +13,15 @@ The following steps should be considered:
 ## Secure a Backup of the ZFS Pool
 
 ## Export the ZFS Pool
-See [docs.oracle.com](http://docs.oracle.com/cd/E19253-01/819-5461/gbchy/index.html)
+
+To export the storage pool 'tank', use the following command:
+```
+$ zpool export tank
+```
+
+See 
+- [exporting zpools](https://pthree.org/2012/12/10/zfs-administration-part-v-exporting-and-importing-zpools/)
+- [docs.oracle.com](http://docs.oracle.com/cd/E19253-01/819-5461/gbchy/index.html)
 
 ## Install Debian Jessie
 
