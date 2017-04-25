@@ -4,7 +4,7 @@
 # and listening to events in a zend framework 2 application and creates a formatted output.
 # 
 # It works only well, if you ommit multiline calls and do not use variables or constants as
-# event name.
+# event names.
 #
 # @author Alexander During
 # @source https://github.com/alexanderduring/notes/blob/master/zendframework2/event-inspector
