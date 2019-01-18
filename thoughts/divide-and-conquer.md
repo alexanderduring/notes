@@ -82,8 +82,9 @@ public function addFooToBar4(Bar $bar, string $foo1, string $foo2)
 }
 ```
 
-For each of the two blocks to understand you only need, the function parameters and what is in the block. You can ignore the 
-other block completely. 
+For each of the two blocks to understand you only need the function parameters and what is in the block. You can ignore the 
+other block completely. Even if you would delete one block, the other one would still work. So the two blocks do not depend on 
+each other. We have split a big idea into two smaller independent thoughts.
 
 If we consider the amount of things to keep in your mind while trying to understand a chunk of code as the "Level of difficulty",
 then last function is easier to understand than the previous one.
@@ -92,6 +93,15 @@ then last function is easier to understand than the previous one.
 If you take a look at the distance of variable assignments and variable usages, you can see a total difference between the 
 functions addFooToBar3 and addFooToBar4.
 
-| Variable | addFooToBar3 | addFooToBar4 |
-|---------:|-------------:|-------------:|
-|          |              |              |
+| Variable                 | addFooToBar3 | addFooToBar4 |
+|:-------------------------|-------------:|-------------:|
+| $upperCaseFoo1           | 5 | 2 |
+| $validFoo2               | 3 | 1 |
+| $prefixedFoo1            | 3 | 2 |
+| $upperCaseFoo2           | 1 | 1 |
+| $concatenatedFoo2AndFoo1 | 2 | 1 |
+| $foo                     | 2 | 1 |
+| $baz                     | 2 | 1 |
+| *Average*                | *2.6* | *1.3* |
+
+The average distance is cut in half, which suggests that to read and understand *addFooToBar4* is half as difficult as *addFooToBar3*.
