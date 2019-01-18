@@ -86,8 +86,24 @@ For each of the two blocks to understand you only need the function parameters a
 other block completely. Even if you would delete one block, the other one would still work. So the two blocks do not depend on 
 each other. We have split a big idea into two smaller independent thoughts.
 
-If we consider the amount of things to keep in your mind while trying to understand a chunk of code as the "Level of difficulty",
-then last function is easier to understand than the previous one.
+## Level of Difficulty
+
+What makes understanding a sentence difficult? Let's take a look at an example:
+
+> *Anyone who feels that if so many more students whom we haven’t actually admitted are sitting in on the course than ones we have that the room had to be changed, then probably auditors will have to be excluded, is likely to agree that the curriculum needs revision.*
+
+When you start reading this sentence you load information in your working memory (e.g. "Anyone who feels"). But when you encounter the word "that", which indicates the beginning of a *that-clause* you put the content of your working memory on your stack, to be retrieved, when the *that-clause* has endet. While more and more subsentences are opening you put additional stuff on your stack, which at the end has to be retrieved and put together in the right order to fully understand the sentence.
+
+What your brain is doing in a recursive manner is breaking the sentence up into smaller chunks that carry simple meaning as follows:
+  - C1: Students whom we have not admitted
+  - C2: Students whom we have admitted
+  - C3: More C1 than C2 are sitting in on the course
+  - C4: So much C3, that the room has to be changed
+  - C5: if C4 then auditors have to be excluded
+  - C6: the curriculum needs revision
+  - C7: Anyone who feels C5 is likely to agree C6
+
+If we consider the amount of things to keep in your mind while trying to understand a sentence (or a chunk of code) as the "Level of difficulty", then last function is easier to understand than the previous one.
 
 ## Conclusions
 If you take a look at the distance of variable assignments and variable usages, you can see a total difference between the 
