@@ -103,11 +103,12 @@ What your brain is doing in a recursive manner is breaking the sentence up into 
   - C6: the curriculum needs revision
   - C7: Anyone who feels C5 is likely to agree C6
 
-If we consider the amount of things to keep in your mind while trying to understand a sentence (or a chunk of code) as the "Level of difficulty", then last function is easier to understand than the previous one.
+If we consider the amount of things to keep in your mind while trying to understand a sentence (or a chunk of code) as the "Level of difficulty", then this sentence has obviously a high level of difficulty. But if you look at the beforementioned functions addFooToBar3 and addFooToBar4, the first one is more difficult than the last one, because you have to remember more things while reading the lines of code.
 
-## Conclusions
-If you take a look at the distance of variable assignments and variable usages, you can see a total difference between the 
-functions addFooToBar3 and addFooToBar4.
+## Variable Lifetime
+
+There is another way to determine the amount of things to keep in your mind while reading the code and this is to measure the distance between the first and last mentioning of a variable. If you take a look at the distance of variable assignments and variable usages, you can see a total difference between the 
+functions addFooToBar3 and addFooToBar4:
 
 | Variable                 | addFooToBar3 | addFooToBar4 |
 |:-------------------------|-------------:|-------------:|
@@ -121,3 +122,10 @@ functions addFooToBar3 and addFooToBar4.
 | *Average*                | *2.6* | *1.3* |
 
 The average distance is cut in half, which suggests that to read and understand *addFooToBar4* is half as difficult as *addFooToBar3*.
+
+## Conclusions
+
+The conclusions are as follows:
+
+- Try to keep variable assignments and variable usages as close as possible.
+- Try to organize code in blocks that are independent from each other.
