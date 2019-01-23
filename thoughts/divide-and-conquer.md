@@ -59,8 +59,8 @@ public function addFooToBar3(Bar $bar, string $foo1, string $foo2)
 ```
 
 ## Putting Together What Belongs Together
-But code in the function above is not really easy to understand. Yes we have divided everything into small steps. And yes we 
-even have ordered the small steps somehow. But it still can only be understood as one monolithic block.
+The code in the function above is not really easy to understand. Yes we have divided everything into small steps. And yes we 
+have even ordered the small steps somehow. But it still can only be understood as one monolithic block.
 
 Look at the next example to see the difference:
 
