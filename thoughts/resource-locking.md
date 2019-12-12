@@ -26,7 +26,7 @@ if ($lock->acquire()) {
     try {
         $this->doStuff();
     } catch (Exception $exception) {
-        $logger->warning('Couldn't do stuff.');
+        $logger->warning('Could not do stuff.');
     }
     $lock->release();
 } else {
